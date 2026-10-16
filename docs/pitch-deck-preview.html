@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTwin AI — Hackathon Presentation Deck</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #131b2e;
+      --border: #1e293b;
+      --cyan: #38bdf8;
+      --violet: #a855f7;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --light: #cbd5e1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #060911;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .deck-header {
+      text-align: center;
+      max-width: 900px;
+    }
+    .deck-header h1 {
+      font-size: 32px;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .deck-header p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .slide {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1100px;
+      aspect-ratio: 16 / 9;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-num {
+      position: absolute;
+      top: 48px;
+      right: 48px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      background: #0f172a;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .tag.amber { color: var(--amber); }
+    .tag.cyan { color: var(--cyan); }
+    .tag.emerald { color: var(--emerald); }
+    .tag.violet { color: var(--violet); }
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      flex: 1;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+    .grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      flex: 1;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      flex: 1;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-num {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--light);
+      line-height: 1.5;
+    }
+    .banner {
+      background: #0f172a;
+      border: 1px solid var(--emerald);
+      border-radius: 8px;
+      padding: 12px 18px;
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+    ul.check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--light);
+    }
+    ul.check-list li::before {
+      content: "•";
+      color: var(--cyan);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="deck-header">
+    <h1>EcoTwin AI — 6-Slide Pitch Presentation</h1>
+    <p>AI-Powered Sustainable Campus Intelligence • Hackathon Presentation & Demonstration Deck</p>
+    <p style="font-size: 12px; margin-top: 6px; color: #64748b;">Matching PPTX: <code>docs/ecotwin-hackathon-pitch.pptx</code></p>
+  </div>
+
+  <!-- SLIDE 1 -->
+  <div class="slide">
+    <div class="slide-num">Slide 1 / 6</div>
+    <div>
+      <div class="tag amber">The Challenge</div>
+      <div class="title">The Campus Sustainability Blind Spot</div>
+      <div class="subtitle">Why higher education institutions struggle to achieve net-zero commitments</div>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="border-top: 3px solid var(--amber);">
+        <div class="card-num" style="color: var(--amber);">01</div>
+        <div class="card-title">Data Fragmentation</div>
+        <div class="card-desc">Utility bills, electric meters, and maintenance logs live in disconnected silos. Facility teams lack unified spatial context to identify resource anomalies.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--violet);">
+        <div class="card-num" style="color: var(--violet);">02</div>
+        <div class="card-title">Physical Blind Spots</div>
+        <div class="card-desc">Critical incidents like overflowing waste bins, equipment faults, or exterior water leaks remain invisible to digital systems until someone files a complaint.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--cyan);">
+        <div class="card-num" style="color: var(--cyan);">03</div>
+        <div class="card-title">Reactive Guesswork</div>
+        <div class="card-desc">Sustainability committees make major policy and retrofit decisions based on guesswork, lacking safe, deterministic sandboxes to test interventions beforehand.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide">
+    <div class="slide-num">Slide 2 / 6</div>
+    <div>
+      <div class="tag emerald">Our Solution</div>
+      <div class="title">EcoTwin AI: Intelligent Campus Digital Twin</div>
+      <div class="subtitle">See the problem. Simulate the solution. Make the campus sustainable.</div>
+    </div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-title" style="color: var(--cyan);">2.5D Spatial Twin</div>
+        <div class="card-desc">Interactive virtual campus mapping Academic Block, Library, and Student Residence with synchronized telemetry layers.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--violet);">Vision-to-Action</div>
+        <div class="card-desc">Dedicated Computer Vision model detecting waste accumulation and leaks, routed through human verification before twin updates.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--emerald);">Deterministic Engine</div>
+        <div class="card-desc">Verifiable mathematical simulation modeling Energy, Water, and Waste policies with zero AI hallucination.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--cyan);">Grok AI Intelligence</div>
+        <div class="card-desc">Context-grounded reasoning generating prioritized recommendations and comprehensive executive sustainability reports.</div>
+      </div>
+    </div>
+    <div class="banner">
+      CORE CONSTITUTIONAL PRINCIPLE: Strictly distinguish measured facts from simulations, observations, and AI explanations. Never present projected savings as measured facts.
+    </div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide">
+    <div class="slide-num">Slide 3 / 6</div>
+    <div>
+      <div class="tag cyan">Architecture</div>
+      <div class="title">The Connected End-to-End Pipeline</div>
+      <div class="subtitle">From raw field observation to verifiable executive intervention</div>
+    </div>
+    <div class="grid-5">
+      <div class="card">
+        <div class="card-title" style="color: var(--cyan); font-size: 14px;">01. Telemetry Ingestion</div>
+        <div class="card-desc" style="font-size: 12px;">Simulated and manual readings (kWh, L, %) ingested with unit discipline and provenance labeling.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--violet); font-size: 14px;">02. Computer Vision</div>
+        <div class="card-desc" style="font-size: 12px;">Dedicated CV service validates magic bytes, infers anomalies, and assigns requires_review status.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--emerald); font-size: 14px;">03. Digital Twin Core</div>
+        <div class="card-desc" style="font-size: 12px;">FastAPI + SQLAlchemy models aggregate spatial coordinates, building metadata, and verified issues.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--cyan); font-size: 14px;">04. Impact Engine</div>
+        <div class="card-desc" style="font-size: 12px;">Pure mathematical simulation engine forecasts exact energy curtailment and cost savings.</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--violet); font-size: 14px;">05. Grok Grounding</div>
+        <div class="card-desc" style="font-size: 12px;">xAI Grok cites verified facility metrics and simulation numbers to produce grounded audit reports.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide">
+    <div class="slide-num">Slide 4 / 6</div>
+    <div>
+      <div class="tag violet">Signature Innovation</div>
+      <div class="title">The Sustainability Time Machine</div>
+      <div class="subtitle">Deterministic policy forecasting before capital allocation</div>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title" style="color: var(--cyan);">Multi-Resource Interventions</div>
+        <div class="card-desc">Explore interventions across Energy (operating schedule curtailment, LED retrofits, HVAC setback), Water (flow reduction, rainwater harvesting), and Waste (segregation rate, composting).</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--violet);">3-Tab Comparative Analytics</div>
+        <div class="card-desc">Interactive visual sandbox: Comparative BarChart (Baseline vs Projected), 30-Day Cumulative Trajectory AreaChart, and Engineering Methodology inspecting exact tariff formulas ($0.12/kWh).</div>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--emerald);">Deterministic Reliability</div>
+        <div class="card-desc">Zero stochastic AI hallucination in numerical calculations. Identical scenario parameters yield mathematically identical kilowatt-hour and dollar savings every time.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 -->
+  <div class="slide">
+    <div class="slide-num">Slide 5 / 6</div>
+    <div>
+      <div class="tag emerald">Prototype Evidence</div>
+      <div class="title">Working Product & Technical Verification</div>
+      <div class="subtitle">Honest audit from our Phase 5 and Phase 6 automated test runs</div>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="border: 1px solid var(--emerald);">
+        <div class="card-title" style="color: var(--emerald);">VERIFIED LIVE CAPABILITIES (32/32 TESTS PASS)</div>
+        <ul class="check-list" style="margin-top: 10px;">
+          <li><b>2.5D Isometric SVG Campus Twin:</b> Selectable polygons for ACADEMIC, LIB, RESIDENCE with active CV observation markers.</li>
+          <li><b>Computer Vision Pipeline:</b> Validates magic bytes (JPEG/PNG/WebP), enforces 8MB limit, and requires human review.</li>
+          <li><b>Sustainability Time Machine:</b> Multi-tab comparative analytics, bound checks, and reproducible engineering models.</li>
+          <li><b>Grok AI Advisor & Reports:</b> Structured grounding, 0-10 priority scoring, and instant PDF audit reports.</li>
+          <li><b>Production Hardened:</b> 0 leaked secrets, clean 500 error sanitization, and Vite SPA client-side deep routing redirects.</li>
+        </ul>
+      </div>
+      <div class="card" style="border: 1px solid var(--amber);">
+        <div class="card-title" style="color: var(--amber);">DOCUMENTED BOUNDARIES & DATA HONESTY</div>
+        <ul class="check-list" style="margin-top: 10px;">
+          <li><b>Telemetry Persistence Ownership:</b> Backend routes for /api/campus, /api/buildings, and /api/sensors belong to Person 2.</li>
+          <li><b>Zero Fabricated Data:</b> When pending endpoints return 404, the frontend displays transparent &lt;DependencyNotice&gt; cards rather than faking telemetry.</li>
+          <li><b>Unit Discipline Strictly Enforced:</b> Energy in kWh, Water volume in L, and Waste in kg/%. Instantaneous kW and volumes are never mixed.</li>
+          <li><b>Provider Fault Tolerance:</b> If XAI_API_KEY is unconfigured, the system safely falls back to deterministic audit calculations.</li>
+          <li><b>Deployment Integrity:</b> Tested against ephemeral container constraints; persistent disk required for production SQLite.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 -->
+  <div class="slide">
+    <div class="slide-num">Slide 6 / 6</div>
+    <div>
+      <div class="tag cyan">Future Outlook</div>
+      <div class="title">Measurable Impact & Scaling Roadmap</div>
+      <div class="subtitle">Transforming campus facility management from reactive reporting into proactive intelligence</div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title" style="color: var(--cyan);">TARGET CAMPUS BENEFITS</div>
+        <ul class="check-list" style="margin-top: 10px;">
+          <li><b>10% - 20% Energy Curtailment:</b> Forecasted monthly reductions through automated operating schedule setbacks and lighting policy optimization.</li>
+          <li><b>4x Faster Custodial Turnaround:</b> Visible bin overflow and plumbing leak observations trigger immediate human-verified custodial dispatches.</li>
+          <li><b>Executive Audit Readiness:</b> 1-click sustainability report compilation eliminates weeks of manual spreadsheet aggregation for campus committees.</li>
+          <li><b>Evidence-Grounded Governance:</b> Transparent calculations allow facility directors to justify capital retrofits with auditable numbers.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--violet);">POST-HACKATHON ROADMAP</div>
+        <ul class="check-list" style="margin-top: 10px;">
+          <li><b>Phase 1: Physical IoT Sub-Meters:</b> Connect Modbus/BACnet physical power sub-meters across university departmental distribution panels.</li>
+          <li><b>Phase 2: Automated CCTV Vision Streams:</b> Real-time edge video pipeline for autonomous waste bin overflow and perimeter moisture detection.</li>
+          <li><b>Phase 3: Multi-Building Portfolio Benchmarking:</b> Expand the Digital Twin across entire collegiate district portfolios with comparative ESG rankings.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

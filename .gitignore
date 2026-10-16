@@ -1,0 +1,65 @@
+# Environments & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv
+venv/
+ENV/
+.pytest_cache/
+
+# Node / Frontend
+node_modules/
+.npm/
+dist/
+dist-ssr/
+*.local
+
+# Database & Runtime Data
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+ecotwin.db
+
+# Uploaded Files & Media
+data/uploads/*
+!data/uploads/.gitkeep
+data/sample_images/*
+!data/sample_images/README.md
+
+# Logs & Temporary Files
+*.log
+logs/
+.tmp/
+tmp/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+*.swp
+*.swo
