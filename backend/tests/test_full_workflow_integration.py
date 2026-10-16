@@ -21,11 +21,19 @@ class TestFullWorkflowIntegration(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        from app.database import Base, engine, SessionLocal
+        from app.seed import seed_database
+        Base.metadata.create_all(bind=engine)
+        db = SessionLocal()
+        try:
+            seed_database(db)
+        finally:
+            db.close()
         cls.client = TestClient(app)
 
     @classmethod
     def tearDownClass(cls):
-        from app.db.session import engine
+        from app.database import engine
         engine.dispose()
 
     def test_step_1_overview_dashboard_dependencies(self):
@@ -88,18 +96,20 @@ class TestFullWorkflowIntegration(unittest.TestCase):
         """Step 5: Test POST /api/simulations/run."""
         payload = {
             "building_id": "LIB",
-            "resource_type": "energy",
-            "intervention": "reduce_operating_hours",
-            "parameters": {
+            "resource_stream": "ENERGY",
+            "energy_baseline": {
                 "power_kw": 25.0,
-                "baseline_operating_hours": 14.0,
-                "proposed_operating_hours": 10.0,
-                "time_period_days": 30,
-                "tariff_rate_per_kwh": 0.12,
+                "operating_hours_per_day": 14.0,
+                "operating_days": 30.0,
+            },
+            "energy_intervention": {
+                "target_power_kw": 25.0,
+                "target_operating_hours_per_day": 10.0,
+                "operating_days": 30.0,
             },
         }
         res = self.client.post("/api/simulations/run", json=payload)
-        self.assertIn(res.status_code, [200, 201, 404])
+        self.assertIn(res.status_code, [200, 201])
 
     def test_step_6_ai_advisor_workflow(self):
         """Step 6: Test POST /api/ai/recommendations with grounded context."""

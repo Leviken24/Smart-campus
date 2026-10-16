@@ -49,8 +49,13 @@ ecotwin.db
 # Uploaded Files & Media
 data/uploads/*
 !data/uploads/.gitkeep
+backend/data/uploads/*
+!backend/data/uploads/.gitkeep
 data/sample_images/*
 !data/sample_images/README.md
+
+# Teammate Cloned Workspace
+sustainable-campus-person2/
 
 # Logs & Temporary Files
 *.log
